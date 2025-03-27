@@ -18,7 +18,8 @@ const Chat = () => {
   else{
      server = "http://localhost:8003/";
   }
-  const systemPrompt = "上網尋找並且用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示";
+  const systemPrompt = "用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示";
+  // const systemPrompt = "";
   const systemPrompt2 = "";                        
   // const systemPrompt2 = "我想將\
   //                       message\
@@ -412,7 +413,7 @@ const Chat = () => {
           <textarea
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
-            placeholder="請用Ctrl-V 貼上你的保單資料..."
+            placeholder="請把2個保險產品名稱打貼上..."
             disabled={isLoading}
             className="message-input"
             rows={3}
@@ -422,7 +423,7 @@ const Chat = () => {
               傳送
             </button>
             <button type="button" onClick={resetChat}>
-              重置對話
+              重置對話唔燈展很美是
             </button>
           </div>
         </form>
