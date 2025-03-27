@@ -423,7 +423,7 @@ const Chat = () => {
               傳送
             </button>
             <button type="button" onClick={resetChat}>
-              重置對話唔燈展很美是
+              重置對話
             </button>
           </div>
         </form>
