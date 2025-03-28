@@ -419,10 +419,11 @@ const Chat = () => {
               />
             </div>
           )}
+          
           <textarea
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
-            placeholder="請把2個保險產品名稱打貼上..."
+            placeholder={`請把2個保險產品名稱打貼上...${!useServer ? ' (local)' : ''}`}
             disabled={isLoading}
             className="message-input"
             rows={3}
