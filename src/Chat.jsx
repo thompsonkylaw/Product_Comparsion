@@ -7,7 +7,7 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 const Chat = () => {
-  const apptitle = "產品比較助手2";
+  const apptitle = "產品比較助手3";
   const secondUserMessage = '';
   const useModeSwitch = true;
   const useServer = true;
@@ -289,7 +289,7 @@ const Chat = () => {
       const apiUrl = useChatApi
         ? server+'api/ppxty'
         : server+ 'api/dswithsearch';
-
+        console.log("endpoint=",server);
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
