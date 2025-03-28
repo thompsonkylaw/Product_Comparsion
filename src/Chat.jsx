@@ -20,7 +20,8 @@ const Chat = () => {
   else{
      server = "http://localhost:8003/";
   }
-  const systemPrompt = "用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示";
+  const systemPrompt = "用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示,最後要加上'備註\
+                        以上資訊基於提供的 2024-2025年網上搜尋結果，部分內容可能與實際事件存在時間或細節差異。'";
   // const systemPrompt = "";
   const systemPrompt2 = "";                        
   // const systemPrompt2 = "我想將\
@@ -287,7 +288,7 @@ const Chat = () => {
     try {
       const apiUrl = useChatApi
         ? server+'api/ppxty'
-        : server+ 'api/ds';
+        : server+ 'api/dswithsearch';
 
         const response = await fetch(apiUrl, {
           method: 'POST',
