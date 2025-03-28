@@ -289,7 +289,8 @@ const Chat = () => {
       const apiUrl = useChatApi
         ? server+'api/ppxty'
         : server+ 'api/dswithsearch';
-        console.log("endpoint=",server);
+        console.log("endpoint=",apiUrl);
+
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
