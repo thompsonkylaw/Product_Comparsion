@@ -7,14 +7,14 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 const Chat = () => {
-  const apptitle = "產品比較助手Grok";
+  const apptitle = "產品比較助手DS web";
   const secondUserMessage = '';
   const useModeSwitch = true;
   const useServer = true;
-  // const firstPromptModel = "deepseek-reasoner";
-  // const secondPromptModel = "deepseek-chat";
-  const firstPromptModel = "grok-2-latest";
-  const secondPromptModel = "grok-2-latest";
+  const firstPromptModel = "deepseek-reasoner";
+  const secondPromptModel = "deepseek-chat";
+  // const firstPromptModel = "grok-2-latest";
+  // const secondPromptModel = "grok-2-latest";
   let server="";
   if (useServer) {
      server = "https://fastapi-production-98d5.up.railway.app/";
@@ -22,7 +22,7 @@ const Chat = () => {
   else{
      server = "http://localhost:8003/";
   }
-  const systemPrompt = "用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示,最後要加上'備註\
+  const systemPrompt = "用超級詳盡的方式比較, 例如要有基礎保單架構,核心保障差異,所有比較都是用表格形式顯示,如發現產品名稱與網上尋找到的不符，應使用網上的名稱,最後要加上'備註\
                         以上資訊基於提供的 2024-2025年網上搜尋結果，部分內容可能與實際事件存在時間或細節差異。'";
   // const systemPrompt = "";
   const systemPrompt2 = "";                        
@@ -290,8 +290,9 @@ const Chat = () => {
     try {
       const apiUrl = useChatApi
         ? server+'api/ppxty'
-        // : server+ 'api/dswithsearch';
-        : server+ 'api/grok2';
+        // : server+ 'api/ds';
+        : server+ 'api/dswithsearch';
+        // : server+ 'api/grok2';
 
         console.log("endpoint=",apiUrl);
 
